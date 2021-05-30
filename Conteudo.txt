@@ -1,0 +1,124 @@
+ => Dart é uma linguagem gerada pela "mistura" de várias outras linguagens como C#, Java etc.
+    * Utilizo o plug-in Code Runner do VS Code
+
+ => Corrigir possiveis erros na execução com parâmetros que não podem receber valor nulo:
+    - ! (depois do parâmetro)
+    - ? (depois do parâmetro)
+    - required (antes do parâmetro)
+  * O uso de cada um desses mecanismos depende da funcionalidade implementada na parte específica do código;
+  * Dependendo do caso as 3 maneiras podem funcionar, ou apenas 1 delas funciona.
+
+ => Introdução
+    - main() é o principio de todo código; é a "porta de entrada"
+    - Em português temos . (ponto final) e em dart temos o ; (ponto e vírgula)
+      /// determinando final de sentença de código
+      /// é possível ter sentanças vazias
+    - Muito cuidado com tabulação, assim como em python.
+    - Blocos: conjuntos de sentanças de código; são determinados por {} (chaves)
+      /// em português são parágrafos, em dart são blocos
+    
+ => Variáveis
+    - Dart é uma linguagem fortemente tipada
+      /// determina-se o tipa da variável no moemntod e criação
+    - Var (faz a inferência da variável)
+    - Na nova versão do Dart ao salvar valores feitos via Input pelo usuário do código, é preciso usar ? na tipagem do dado
+        main() {
+          String? teste = stdin.readLineSync();
+          print(teste);
+        } /// Significa que mesmo que a entrada não seja desse tipo de dado, ele será convertido no momento do Input
+      No caso do uso do var (tipo dinâmico)
+        main() {
+          String teste = stdin.readLineSync()!;
+          print(teste);
+        } /// É necessário fazer a alteração no Input mesmo. Essa opção também é valida quando se usa tipagem.
+
+ => Constantes
+    - final
+      /// constante definida na execução 
+    - const 
+      /// pode ser definida no momento de compilação
+    - Quanto mais constantes melhor
+
+ => Tipos Básicos
+    - int
+      ///abs() - entrega o valor absoluto da variável numérica
+    - double
+      /// int e double herdam de num (classe pai) que pode receber valores int e double
+      /// .roundToDouble() - "arredonda" o valor 
+      /// .truncateToDouble() - retira as casas decimais
+      /// .abs() - entrega o valor absoluto da variável numérica
+    - String
+      ///<tipo>.parse() - transforma o dado para o tipo determinado, geralmente string p/ double
+      ///toUpperCase() - tranforma as letras da string em maiusculas 
+      ///.substring(x,y) - acessa apenas aquela parte determinada da string
+      ///.padRight(x,y) - completa a string até o tamanho x, com carcteres y
+    - bool
+      /// recebe apenas os valores true ou false
+    - dynamic
+      /// pode receber diversos tipos de valores nas atribuições 
+
+ => Lista
+    - List <nome> = [];
+    - .elementAt(n); // acessa o elemento de indice n
+    - inicia no indice 0
+    - .lenght; // retorna o tamanho da lista/ nº de elementos 
+    - aceita repetição
+
+ => Map
+    - O mesmo dicionário em pyhton
+    - Map <nome> = {};
+    - Estrutura chave:valor
+    - <nome>[<chave]; // retorna o valor correspondente à chave
+    - .lenght; // retorna o tamanho do Map/ nº de elementos 
+    - .values; // retorna todos os valores do Map
+    - .keys; // retorna todas as chaves do Map
+    - .entries; // retorna todas as entradas/ conjuntos chave:valor
+
+ => Set
+    - conjunto de elementos // como conjuntos da matemática
+    - operações comuns de conjuntos (adicionar, união, intersecção, contém, pertence...)
+    - .lenght; // retorna o tamanho do Set/ nº de elementos 
+    - .first; // acessa o 1º elemento
+    - .last; // acessa o último elemento
+    - não aceita repetição
+
+ => Métodos 
+    - stdin.readLineSync() /// entrada de dados pelo usuário
+    - stdout.write() /// saída de informação para o usuário
+
+ => Operadores
+    - Aritméticos, binários e infix
+      + - soma
+      * - multiplicação
+      / - divisão
+      % - resto da divisão
+    - Lógicos, binários e infix
+      && - "e"
+      || - "ou"
+      ^ - "ou" exclusivo // se APENAS uma das variaveis for verdadeira
+      ///is - "é"
+    - Lógico, unário e prefix
+      ! - negação lógica
+    - De Atribuição e binário
+      = - igual
+      -=/ += / *= / /= 
+    - De Atribuição e unário
+      ++ // +1 
+      -- // -1
+    - Relacional e binário
+      /// sempre retorna bool
+      > e < 
+      >= e <=
+      !=
+      ==
+    - Ternário
+      /// 3 partes
+      <expressão> ? <resultado se verdadeiro> : <resultado se falso>; 
+  => Interpolação
+    - $ <dados>
+    - interpreta variáveis dentro de uma string // fica menor a sentença comparado com concatenação
+  => Generics
+    - <>
+    - especifica o tipo de dados    
+
+
